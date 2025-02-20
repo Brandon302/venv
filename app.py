@@ -1,12 +1,16 @@
+import os
 from flask import Flask, request, jsonify, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from dotenv import load_dotenv
+
+#cargar las variables de entorno 
+load_dotenv()
 
 app = Flask(__name__)
 
 # Configuración de la base de datos PostgreSQL
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://user:H8GeFBHUFWl408s0ngkzfY1ienArKqNO@dpg-cuiilc56l47c73afpp30-a.oregon-postgres.render.com/dbcetech'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
 
 db = SQLAlchemy(app)
 
