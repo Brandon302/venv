@@ -2,5 +2,5 @@ __pycache__/
 Lib/
 Scripts/
 Include/
-pyvenv.cfg/
-.env/
+pyvenv.cfg
+.env
